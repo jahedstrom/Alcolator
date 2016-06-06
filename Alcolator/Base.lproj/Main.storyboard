@@ -41,8 +41,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prL-AY-bgb">
-                                <rect key="frame" x="35" y="182" width="530" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prL-AY-bgb">
+                                <rect key="frame" x="240" y="175" width="120" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -57,6 +57,7 @@
                             <constraint firstItem="apL-FR-feE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HDB-b9-QBf"/>
                             <constraint firstItem="GWu-vX-m3E" firstAttribute="centerX" secondItem="apL-FR-feE" secondAttribute="centerX" id="MsV-54-taW"/>
                             <constraint firstItem="prL-AY-bgb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="Mxs-6v-ARJ"/>
+                            <constraint firstItem="prL-AY-bgb" firstAttribute="width" secondItem="DZP-Vk-ctm" secondAttribute="width" id="SNQ-l8-f0g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="prL-AY-bgb" secondAttribute="trailing" constant="15" id="bGg-3Z-0pZ"/>
                             <constraint firstItem="apL-FR-feE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="dxm-zO-wQP"/>
                             <constraint firstItem="DZP-Vk-ctm" firstAttribute="top" secondItem="GWu-vX-m3E" secondAttribute="bottom" constant="26" id="ibF-80-AIN"/>
@@ -67,6 +68,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="dxm-zO-wQP"/>
+                                <exclude reference="Mxs-6v-ARJ"/>
+                                <exclude reference="bGg-3Z-0pZ"/>
                             </mask>
                         </variation>
                         <connections>
