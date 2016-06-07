@@ -41,8 +41,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prL-AY-bgb">
-                                <rect key="frame" x="240" y="175" width="120" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prL-AY-bgb">
+                                <rect key="frame" x="240" y="182" width="120" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -54,6 +54,7 @@
                             <constraint firstItem="GWu-vX-m3E" firstAttribute="width" secondItem="apL-FR-feE" secondAttribute="width" id="4t1-AY-QBK"/>
                             <constraint firstItem="DZP-Vk-ctm" firstAttribute="centerX" secondItem="GWu-vX-m3E" secondAttribute="centerX" id="57x-UQ-hPW"/>
                             <constraint firstItem="GWu-vX-m3E" firstAttribute="top" secondItem="apL-FR-feE" secondAttribute="bottom" constant="8" id="BD1-Ig-Udv"/>
+                            <constraint firstItem="prL-AY-bgb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C50-0w-IN6"/>
                             <constraint firstItem="apL-FR-feE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HDB-b9-QBf"/>
                             <constraint firstItem="GWu-vX-m3E" firstAttribute="centerX" secondItem="apL-FR-feE" secondAttribute="centerX" id="MsV-54-taW"/>
                             <constraint firstItem="prL-AY-bgb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="Mxs-6v-ARJ"/>
@@ -64,10 +65,12 @@
                             <constraint firstAttribute="leadingMargin" secondItem="apL-FR-feE" secondAttribute="leading" id="lOG-AH-sMF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="apL-FR-feE" secondAttribute="trailing" id="oh8-1Q-jcI"/>
                             <constraint firstItem="prL-AY-bgb" firstAttribute="top" secondItem="DZP-Vk-ctm" secondAttribute="bottom" constant="15" id="u23-wq-95N"/>
+                            <constraint firstItem="prL-AY-bgb" firstAttribute="centerX" secondItem="DZP-Vk-ctm" secondAttribute="centerX" id="xQx-hz-ohI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="dxm-zO-wQP"/>
+                                <exclude reference="C50-0w-IN6"/>
                                 <exclude reference="Mxs-6v-ARJ"/>
                                 <exclude reference="bGg-3Z-0pZ"/>
                             </mask>
