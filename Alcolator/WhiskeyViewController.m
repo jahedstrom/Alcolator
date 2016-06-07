@@ -14,8 +14,8 @@
 
 @implementation WhiskeyViewController
 
-- (void)buttonPressed:(UIButton *)sender;
-{
+- (void)buttonPressed:(UIButton *)sender {
+    
     [self.beerPercentTextField resignFirstResponder];
     
     int numberOfBeers = self.beerCountSlider.value;
