@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-Uc-xad">
-                                <rect key="frame" x="248" y="60" width="105" height="73"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-Uc-xad">
+                                <rect key="frame" x="248" y="104" width="105" height="73"/>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="50"/>
                                 <state key="normal" title="Wine">
                                     <color key="titleColor" red="0.44705882352941173" green="0.18431372549019609" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,8 +28,8 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="2xK-ea-arE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afT-yH-OGf">
-                                <rect key="frame" x="221" y="153" width="159" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afT-yH-OGf">
+                                <rect key="frame" x="221" y="197" width="159" height="76"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="50"/>
                                 <state key="normal" title="Whiskey">
                                     <color key="titleColor" red="0.70196078429999997" green="0.40784313729999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,7 +148,7 @@
         <!--Whiskey-->
         <scene sceneID="DUd-7s-Igu">
             <objects>
-                <viewController storyboardIdentifier="Whiskey" id="wUl-s6-tIG" customClass="WhiskeyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Whiskey" title="Whiskey" id="wUl-s6-tIG" customClass="WhiskeyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ey2-ya-7PM"/>
                         <viewControllerLayoutGuide type="bottom" id="uNb-h2-Ven"/>
