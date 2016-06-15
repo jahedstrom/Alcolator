@@ -38,23 +38,22 @@
     NSLog(@"Slider value changed to %f", sender.value);
     [self.beerPercentTextField resignFirstResponder];
     
-    [self updateWineView];
+    [self updateView];
 }
 
 - (IBAction)buttonPressed:(id)sender {
     [self.beerPercentTextField resignFirstResponder];
     
-    [self updateWineView];
+    [self updateView];
    
     
 }
 
-- (IBAction)tapGestureDidFIre:(UITapGestureRecognizer *)sender {
+- (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
     [self.beerPercentTextField resignFirstResponder];
 }
 
-- (float)calculateWineEquivalent {
-    
+- (float)calculateEquivalentAlcoholAmountWithOunces:(float)ouncesPerUnit andAlcoholPercentage:(float)alcoholPercentagePerUnit {
     // first, calculate how much alcohol is in all those beers..
     int numberOfBeers = self.beerCountSlider.value;
     int ouncesInOneBeerGlass = 12; // Assume 12oz bottles
@@ -62,50 +61,52 @@
     float ouncesOfAlcoholPerBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
     float ouncesofAlcoholTotal = ouncesOfAlcoholPerBeer * numberOfBeers;
     
-    // now calculate the equivalent amount of wine
-    float ouncesInOneWineGlass = 5;
-    float alcoholPercentageOfWine = 0.13; // 13% average
-    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    // now calculate the equivalent amount of alcohol per unit
+    float ouncesOfAlcoholPerUnit = ouncesPerUnit * alcoholPercentagePerUnit;
     
     // check for div by 0
-    if (ouncesOfAlcoholPerWineGlass > 0) {
-        return (ouncesofAlcoholTotal / ouncesOfAlcoholPerWineGlass);
+    if (ouncesOfAlcoholPerUnit > 0) {
+        return (ouncesofAlcoholTotal / ouncesOfAlcoholPerUnit);
     } else {
         return 0;
     }
     
 }
 
-- (void)updateWineView {
-    
-    float numberOfWineGlassesForEquivalentAlcoholAmount = [self calculateWineEquivalent];
-    
-    NSString *wineTitle = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.1f glasses)", nil),numberOfWineGlassesForEquivalentAlcoholAmount];
-    self.navigationItem.title = wineTitle;
-
-    
+- (NSString *)getBeerText {
     int numberOfBeers = self.beerCountSlider.value;
     
     // decide whether to use "beer"/"beers" and "glass"/"glasses"
-        NSString *beerText;
     if (numberOfBeers == 1) {
-        beerText = NSLocalizedString(@"beer", @"singular beer");
+        return NSLocalizedString(@"beer", @"singular beer");
     } else {
-        beerText = NSLocalizedString(@"beers", @"plural of beer");
+        return NSLocalizedString(@"beers", @"plural of beer");
+
     }
-    
-        NSString *wineText;
-    if (numberOfWineGlassesForEquivalentAlcoholAmount == 1) {
+}
+
+- (NSString *)resultTextWithAmount:(float)alcoholAmount {
+    NSString *wineText;
+    if (alcoholAmount == 1) {
         wineText = NSLocalizedString(@"glass", @"singular glass");
     } else {
         wineText  = NSLocalizedString(@"glasses", @"plural of glass");
     }
-
+    
+    int numberOfBeers = self.beerCountSlider.value;
     
     // generate the result text, and display it on the label
-    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of wine.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
-    self.resultLabel.text = resultText;
+    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of wine.", nil), numberOfBeers,[self getBeerText], [self.beerPercentTextField.text floatValue], alcoholAmount, wineText];
+    
+    return resultText;
+}
 
+- (void)updateView {
+    float EquivalentAlcoholAmount = [self calculateEquivalentAlcoholAmountWithOunces:5.0 andAlcoholPercentage:0.13];
+    
+    NSString *navTitle = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.1f glasses)", nil), EquivalentAlcoholAmount];
+    self.navigationItem.title = navTitle;
+    self.resultLabel.text = [self resultTextWithAmount:EquivalentAlcoholAmount];
 }
 
 

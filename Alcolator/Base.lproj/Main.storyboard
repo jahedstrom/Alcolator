@@ -139,7 +139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Uq4-yN-xzy">
                     <connections>
-                        <action selector="tapGestureDidFIre:" destination="BYZ-38-t0r" id="wDZ-fm-2xl"/>
+                        <action selector="tapGestureDidFire:" destination="BYZ-38-t0r" id="RfL-BT-qMQ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+- (float)calculateEquivalentAlcoholAmountWithOunces:(float)ouncesPerUnit andAlcoholPercentage:(float)alcoholPercentagePerUnit;
+- (NSString *)getBeerText;
+- (NSString *)resultTextWithAmount:(float)alcoholAmount;
+- (void)updateView;
+
 
 @end
 
