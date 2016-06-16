@@ -107,6 +107,17 @@
     NSString *navTitle = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.1f glasses)", nil), EquivalentAlcoholAmount];
     self.navigationItem.title = navTitle;
     self.resultLabel.text = [self resultTextWithAmount:EquivalentAlcoholAmount];
+    
+    // determine if we should round the badge value up or down
+    float fractionalValue = EquivalentAlcoholAmount - (int) EquivalentAlcoholAmount;
+    int badgeNumber;
+    if (fractionalValue < 0.5) {
+        badgeNumber = (int) EquivalentAlcoholAmount;
+    } else {
+        badgeNumber = ceilf(EquivalentAlcoholAmount);
+    }
+    
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", badgeNumber]];
 }
 
 
